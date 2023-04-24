@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+        integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <title>Forms</title>
+</head>
+<body>
+{{if .Success}}
+    <h1>{{ .SuccessMessage}}</h1>
+    <button class="pure-button button-secondary"><a href="/">Go back!</a></button>
+{{else}}
+    <div class="center">
+        <h1>Contact</h1>
+            <form method="POST" class="pure-form pure-form-stacked">
+                <fieldset>
+                    <label for="stacked-email">Email:</label>
+                    <input type="email" name="email" id="stacked-email" placeholder="Email" />
+
+                    <label for="stacked-subject" >Subject:</label>
+                    <input type="text" name="subject" id="stacked-subject" placeholder="Subject">
+
+                    <label for="stacked-message">Message:</label>
+                    <textarea name="message" id="stacked-message" placeholder="Message"></textarea>
+                    <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                </fieldset>
+            </form>
+    </div>
+{{end}}
+<style>
+    .center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+    }
+    label, input, textarea, button {
+        font-size: 120%;
+    }
+
+    .button-secondary {
+        color: white;
+        border-radius: 4px;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        background: rgb(77, 185, 218);
+    }
+    a {
+    all: unset;
+    }
+
+</style>
+</body>
+</html>
+
+
+
